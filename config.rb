@@ -1,3 +1,5 @@
+set :haml, :format => :html5
+
 ###
 # Compass
 ###
@@ -52,6 +54,10 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 
 set :images_dir, 'img'
+
+foundation_path = Gem::Specification.find_by_name('zurb-foundation').gem_dir
+set :js_assets_paths, [File.join(foundation_path, 'js')]
+set :sass_assets_paths, [File.join(foundation_path, 'scss')]
 
 # Build-specific configuration
 configure :build do

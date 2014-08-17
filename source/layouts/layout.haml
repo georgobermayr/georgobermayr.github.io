@@ -1,0 +1,17 @@
+!!!
+/[if IE 9] <html class="lt-ie10" lang="en" >
+%html.no-js{"data-useragent" => "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= data.page.title
+    = stylesheet_link_tag "site.css"
+    
+  %body
+    = yield
+    = javascript_include_tag "site.js"
+  :javascript
+    $(document).foundation();
+
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
